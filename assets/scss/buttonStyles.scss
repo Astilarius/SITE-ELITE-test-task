@@ -1,0 +1,36 @@
+@use "_colors.scss";
+
+.primary-black {
+    background-color: colors.$accent-primary;
+    color: colors.$text-light-primary;
+    border-width: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.primary-black:hover {
+    background-color: colors.$accent-primary-hover;
+}
+
+.primary-light {
+    background-color: colors.$accent-secondary;
+    color: colors.$text-dark-primary;
+    border-width: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.primary-light:hover {
+    background-color: colors.$accent-primary-hover;
+}
+
+.secondary-light {
+    background-color: transparent;
+    color: colors.$text-light-primary;
+    border-color: colors.$stroke-light-25;
+    border-width: 1px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.secondary-light:hover {
+    background-color: colors.$accent-secondary;
+    color: colors.$text-dark-primary;
+}
