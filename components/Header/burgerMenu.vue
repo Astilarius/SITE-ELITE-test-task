@@ -51,21 +51,21 @@ const showMobileMenu = ref<boolean>(false)
         align-items: center;
         gap: 0.5rem;
     }
-}
 
-.header__mobile-menu-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: colors.$bg-white;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 0.75rem;
-    border: 0;
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: colors.$bg-white;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.75rem;
+        border: 0;
 
-    img {
-        width: 1.25rem;
-        height: 1.25rem;
+        img {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
     }
 }
 </style>
