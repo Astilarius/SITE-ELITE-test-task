@@ -6,9 +6,9 @@
     border-width: 0;
     transition: 0.3s;
     cursor: pointer;
-}
-.primary-black:hover {
-    background-color: colors.$accent-primary-hover;
+    &:hover {
+        background-color: colors.$accent-primary-hover;
+    }
 }
 
 .primary-light {
@@ -17,9 +17,9 @@
     border-width: 0;
     transition: 0.3s;
     cursor: pointer;
-}
-.primary-light:hover {
-    background-color: colors.$accent-primary-hover;
+    &:hover {
+        background-color: colors.$accent-primary-hover;
+    }
 }
 
 .secondary-light {
@@ -29,8 +29,8 @@
     border-width: 1px;
     transition: 0.3s;
     cursor: pointer;
-}
-.secondary-light:hover {
-    background-color: colors.$accent-secondary;
-    color: colors.$text-dark-primary;
+    &:hover {
+        background-color: colors.$accent-secondary;
+        color: colors.$text-dark-primary;
+    }
 }
