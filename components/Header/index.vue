@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import { HeaderBurgerMenu } from '#components';
-
-function processCall() {
-    window.location.href = 'tel:+7 (495) 434-03-26'
-}
 </script>
 
 <template>
@@ -13,9 +9,9 @@ function processCall() {
             <h1 class="header__title">Scamacca</h1>
             <img class="header__icon" src="@/assets/icons/bear.svg"/>
         </div>
-        <button @click="()=>processCall()" class="header__phone-button">
+        <a href="tel:+74954340326" class="header__phone-button">
             <nuxt-icon name="phone"/>
-        </button>
+        </a>
     </div>
 </template>
 

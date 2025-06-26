@@ -82,7 +82,7 @@ function handleSubmit() {
                         Я принимаю <a class="offer-form__checkbox-link">условия передачи информации</a>
                     </label>
                 </div>
-                <button @click="()=>handleSubmit()" class="offer-form__submit-button primary-light">
+                <button @click="handleSubmit" class="offer-form__submit-button primary-light">
                     Оставить заявку <nuxt-icon name="arrow"/>
                 </button>
             </div>

@@ -3,11 +3,11 @@ const showMobileMenu = ref<boolean>(false)
 </script>
 
 <template>
-    <button @click="()=>{showMobileMenu = true}" class="header__mobile-menu-button primary-light">
+    <button @click="showMobileMenu = true" class="header__mobile-menu-button primary-light">
         <img src="@/assets/icons/menu.svg"/>
     </button>
     <div class="header__mobile-menu" v-show="showMobileMenu">
-        <button @click="()=>{showMobileMenu = false}" class="header__mobile-menu-button primary-light">
+        <button @click="showMobileMenu = false" class="header__mobile-menu-button primary-light">
             <img src="@/assets/icons/close.svg"/>
         </button>
         <span class="header__mobile-menu-link">
