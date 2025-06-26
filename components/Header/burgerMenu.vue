@@ -45,7 +45,7 @@ const showMobileMenu = ref<boolean>(false)
     flex-direction: column;
     gap: 0.5rem;
 
-    .header__mobile-menu-link {
+    &-link {
         display: flex;
         flex-direction: row;
         align-items: center;

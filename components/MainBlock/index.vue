@@ -76,85 +76,83 @@ const slides = [
         }
     }
 
-    .main-block__slide {
+    &__slide {
         display: flex;
         flex-direction: column;
         gap: 1.5625rem;
 
-        .main-block__slide-text-block {
+        &-text-block {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-
-            .main-block__slide-title {
-                color: colors.$text-light-primary;
-                font-weight: 600;
-                font-size: 26px;
-                line-height: 115%;
-                letter-spacing: 0%;
-            }
-            @media screen and (min-width: variables.$md) {
-                .main-block__slide-title {
-                    font-size: 2.25rem;
-                }
-            }
-
-            .main-block__slide-description {
-                color: colors.$text-light-primary;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 150%;
-                letter-spacing: 0%;
-            }
-            @media screen and (min-width: variables.$md) {
-                .main-block__slide-description {
-                    font-size: 1rem;
-                }
-            }
         }
         @media screen and (min-width: variables.$md) {
-            .main-block__slide-text-block {
+            &-text-block {
                 max-width: 452px;
             }
         }
-
-        
-        .main-block__slide-button-block {
-            display: flex;
-            flex-direction: column;
+    }
+    
+    &__slide-button-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__slide-button-block {
+            flex-direction: row;
             gap: 0.625rem;
-            
-            .main-block__slide-button {
-                display: flex;
-                flex-direction: row;
-                gap: 1.25rem;
-
-                width: max-content;
-                padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
-                border-radius: 0.5rem;
-                
-                svg {
-                    margin-top: 1.25rem;
-                    width: 1rem;
-                    height: 1rem;
-                }
-            }
-            @media screen and (min-width: variables.$md) {
-                .main-block__slide-button {
-                    font-size: 1rem;
-                }
-            }
         }
-        @media screen and (min-width: variables.$md) {
-            .main-block__slide-button-block {
-                flex-direction: row;
-                gap: 0.625rem;
-            }
-        }
+    }
+    
+    &__slide-button {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+        width: max-content;
+        padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
+        border-radius: 0.5rem;
         
+        svg {
+            margin-top: 1.25rem;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    @media screen and (min-width: variables.$md) {
+        &__slide-button {
+            font-size: 1rem;
+        }
     }
 
-    .main-block__slide-addons-block {
+    
+    &__slide-description {
+        color: colors.$text-light-primary;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0%;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__slide-description {
+            font-size: 1rem;
+        }
+    }
+    
+    &__slide-title {
+        color: colors.$text-light-primary;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 115%;
+        letter-spacing: 0%;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__slide-title {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__slide-addons-block {
         display: flex;
         flex-direction: row;
         margin-top: 2.5rem;
@@ -162,49 +160,55 @@ const slides = [
         margin-bottom: 2.5rem;
         justify-content: space-between;
         gap: 1.25rem;
-
-        .main-block__slide-navigation-block {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            min-width: 90px;
-            height: 50px;
-            border-style: solid;
-            border-width: 1px;
-            border-radius: 0.5rem;
-            border-color: colors.$stroke-light-25;
-            align-self: flex-end;
-
-            .carousel__prev, .carousel__next {
-                position: relative;
-                transform: none;
-                color: colors.$text-light-primary;
-                inset-block-start: 0;
-                padding: 2px;
-            }
+    }
+    @media screen and (min-width: variables.$lg) {
+        &__slide-addons-block {
+            margin-top: 8.5rem;
         }
-        .main-block__slide-pagination-block {
-            width: 100%;
-            .carousel__pagination {
-                position: relative;
-                display: flex;
-                .carousel__pagination-item {
-                    width: 100%;
-                    .carousel__pagination-button {
-                        background-color: colors.$stroke-light-25;
-                        width: 100%;
-                    }
-                    .carousel__pagination-button--active {
-                        background-color: colors.$stroke-light-100;
-                    }
+    }
+
+    
+    &__slide-pagination-block {
+        width: 100%;
+        
+        .carousel__pagination {
+            position: relative;
+            display: flex;
+
+            &-item {
+                width: 100%;
+            }
+
+            &-button {
+                background-color: colors.$stroke-light-25;
+                width: 100%;
+
+                &--active {
+                    background-color: colors.$stroke-light-100;
                 }
             }
         }
     }
-    @media screen and (min-width: variables.$lg) {
-        .main-block__slide-addons-block {
-            margin-top: 8.5rem;
+    
+    &__slide-navigation-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 90px;
+        height: 50px;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0.5rem;
+        border-color: colors.$stroke-light-25;
+        align-self: flex-end;
+
+        .carousel__prev, .carousel__next {
+            position: relative;
+            transform: none;
+            color: colors.$text-light-primary;
+            inset-block-start: 0;
+            padding: 2px;
         }
     }
 }

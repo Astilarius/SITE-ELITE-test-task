@@ -66,14 +66,10 @@ const slides = [
     gap: 1.25rem;
     padding-bottom: 2.5rem;
 
-    .sertificates-block__top-line {
+    &__top-line {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
-        .sertificates-block__title {
-            font-size: 1.25rem;
-        }
 
         .sertificates-block__all-sertificates-button {
             display: none;
@@ -96,12 +92,16 @@ const slides = [
             }
         }
     }
+    
+    &__title {
+        font-size: 1.25rem;
+    }
 
     .carousel__slide {
         padding: 1px;
     }
 
-    .sertificates-block__card {
+    &__card {
         display: flex;
         flex-direction: row;
         padding: 1.25rem;
@@ -112,40 +112,41 @@ const slides = [
         height: 12.5rem;
         gap: 2rem;
 
-        .sertificates-block__card-text-block {
+        &-text-block {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
-
-            .sertificates-block__card-title {
-                font-size: 1rem;
-                color: colors.$text-dark-primary;
-            }
-            .sertificates-block__card-link {
-                font-size: 1rem;
-                color: colors.$accent-primary;
-                cursor: pointer;
-
-                svg {
-                    width: 1rem;
-                    height: 1rem;
-                    padding: 0.125rem;
-                }
-            }
-            .sertificates-block__card-link:hover {
-                color: colors.$text-dark-secondary;
-            }
         }
 
-        .sertificates-block__card-icon {
+        &-title {
+            font-size: 1rem;
+            color: colors.$text-dark-primary;
+        }
+
+        &-link {
+            font-size: 1rem;
+            color: colors.$accent-primary;
+            cursor: pointer;
+            &:hover {
+                color: colors.$text-dark-secondary;
+            }
+
             svg {
-                min-width: 1.5rem;
-                min-height: 1.5rem;
+                width: 1rem;
+                height: 1rem;
+                padding: 0.125rem;
+            }
+
+            &-icon {
+                svg {
+                    min-width: 1.5rem;
+                    min-height: 1.5rem;
+                }
             }
         }
     }
 
-    .sertificates-block__all-sertificates-button {
+    &__all-sertificates-button {
         display: flex;
         flex-direction: row;
         gap: 1.25rem;
@@ -162,7 +163,7 @@ const slides = [
         }
     }
     @media screen and (min-width: variables.$md) {
-        .sertificates-block__all-sertificates-button {
+        &__all-sertificates-button {
             display: none;
         }
     }

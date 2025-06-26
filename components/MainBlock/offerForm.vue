@@ -107,163 +107,163 @@ function handleSubmit() {
     z-index: 5;
     font-size: 1rem;
 
-    .offer-form__title {
+    &__title {
         font-size: 1rem;
         line-height: 140%;
         letter-spacing: 0%;
         font-weight: 600;
     }
     @media screen and (min-width: variables.$md) {
-        .offer-form__title {
+        &__title {
             font-size: 1.125rem;
         }
     }
 
-    .offer-form__input-block {
+    &__input-block {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
-
-        .offer-form__text-inputs-block {
-            display: flex;
+    }
+    
+    &__buttons-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__buttons-block {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    @media screen and (min-width: variables.$lg) {
+        &__buttons-block {
             flex-direction: column;
-            gap: 1.25rem;
-            
-            .offer-form__text-input-block {
-                display: flex;
-                flex-direction: column;
-                gap: 0.25rem;
-
-                .offer-form__input-label {
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                }
-                .offer-form__text-input {
-                    padding: 1rem;
-                    border-radius: 0.5rem;
-                    border-width: 1px;
-                    border-style: solid;
-                    border-color: colors.$stroke-dark-25;
-                    background-color: colors.$stroke-light-100;
-                    color: colors.$text-dark-secondary;
-                }
-                .offer-form__text-input:hover {
-                    background-color: colors.$stroke-dark-25;
-                }
-                .offer-form__text-input:active {
-                    border-color: colors.$stroke-dark-50;
-                }
-            }
-            @media screen and (min-width: variables.$md) {
-                .offer-form__text-input-block {
-                    width: 50%;
-                }
-            }
-            @media screen and (min-width: variables.$lg) {
-                .offer-form__text-input-block {
-                    width: 100%;
-                }
-            }
-
-            
-
-            .offer-form__text-input-error {                
-                border: 1px solid colors.$stroke-dark-10;
-                border-radius: 1rem;
-                padding: 0.625rem;
-                display: flex;
-                flex-direction: row;
-                gap: 0.625rem;
-
-                svg {
-                    color: colors.$error;
-                }
-            }
+            align-items: start;
         }
-        @media screen and (min-width: variables.$md) {
-            .offer-form__text-inputs-block {
-                flex-direction: row;
-            }
-        }
-        @media screen and (min-width: variables.$lg) {
-            .offer-form__text-inputs-block {
-                flex-direction: column;
-            }
-        }
+    }
 
-        .offer-form__buttons-block {
-            display: flex;
+    &__submit-button {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+
+        width: max-content;
+        padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
+        border-radius: 0.5rem;
+        
+        svg {
+            margin-top: 1.25rem;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    
+    &__checkbox-container {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 0.75rem;
+    }
+    
+    &__checkbox {
+        border-radius: 0.25rem;
+        border: 1px solid colors.$stroke-dark-25;
+        background-color: transparent;
+        appearance: none;
+        min-width: 1.1rem;
+        min-height: 1.1rem;
+
+        &-error {
+            border: 1px solid colors.$error;
+        }
+        &:hover {
+            border: 1px solid colors.$stroke-dark-50;
+        }
+        &:checked {
+            background-color: colors.$bg-dark;
+            background-image: url("@/assets/icons/check.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__checkbox-label {
+        font-size: 14px;
+        line-height: 150%;
+    }
+    
+    &__checkbox-link {
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+            color: colors.$text-dark-secondary;
+        }
+    }
+    
+    &__text-inputs-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__text-inputs-block {
+            flex-direction: row;
+        }
+    }
+    @media screen and (min-width: variables.$lg) {
+        &__text-inputs-block {
             flex-direction: column;
-            gap: 1rem;
-
-            .offer-form__checkbox-container {
-                display: flex;
-                flex-direction: row;
-                align-items: start;
-                gap: 0.75rem;
-
-                .offer-form__checkbox {
-                    border-radius: 0.25rem;
-                    border: 1px solid colors.$stroke-dark-25;
-                    background-color: transparent;
-                    appearance: none;
-                    min-width: 1.1rem;
-                    min-height: 1.1rem;
-                }
-                .offer-form__checkbox-error {
-                    border: 1px solid colors.$error;
-                }
-                .offer-form__checkbox:hover {
-                    border: 1px solid colors.$stroke-dark-50;
-                }
-                .offer-form__checkbox:checked {
-                    background-color: colors.$bg-dark;
-                    background-image: url("@/assets/icons/check.svg");
-                    background-position: center;
-                    background-repeat: no-repeat;
-                }
-
-                .offer-form__checkbox-label {
-                    font-size: 14px;
-                    line-height: 150%;
-
-                    .offer-form__checkbox-link {
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-                    .offer-form__checkbox-link:hover {
-                        color: colors.$text-dark-secondary;
-                    }
-                }
-            }
-            .offer-form__submit-button {
-                display: flex;
-                flex-direction: row;
-                gap: 1.25rem;
-
-                width: max-content;
-                padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
-                border-radius: 0.5rem;
-                
-                svg {
-                    margin-top: 1.25rem;
-                    width: 1rem;
-                    height: 1rem;
-                }
-            }
         }
-        @media screen and (min-width: variables.$md) {
-            .offer-form__buttons-block {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
+    }
+
+    &__text-input-error {                
+        border: 1px solid colors.$stroke-dark-10;
+        border-radius: 1rem;
+        padding: 0.625rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.625rem;
+
+        svg {
+            color: colors.$error;
         }
-        @media screen and (min-width: variables.$lg) {
-            .offer-form__buttons-block {
-                flex-direction: column;
-                align-items: start;
-            }
+    }
+            
+    &__text-input-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    @media screen and (min-width: variables.$md) {
+        &__text-input-block {
+            width: 50%;
+        }
+    }
+    @media screen and (min-width: variables.$lg) {
+        &__text-input-block {
+            width: 100%;
+        }
+    }
+    
+    &__input-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+    &__text-input {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: colors.$stroke-dark-25;
+        background-color: colors.$stroke-light-100;
+        color: colors.$text-dark-secondary;
+        &:hover {
+            background-color: colors.$stroke-dark-25;
+        }
+        &:active {
+            border-color: colors.$stroke-dark-50;
         }
     }
 }

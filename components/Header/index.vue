@@ -5,9 +5,7 @@ import { HeaderBurgerMenu } from '#components';
 <template>
     <div class="header">
         <HeaderBurgerMenu/>
-        <div class="header__title-block">
-            <nuxt-icon class="header__logo" name="logo"/>
-        </div>
+        <nuxt-icon class="header__logo" name="logo"/>
         <a href="tel:+74954340326" class="header__phone-button">
             <nuxt-icon name="phone"/>
         </a>
@@ -26,22 +24,14 @@ import { HeaderBurgerMenu } from '#components';
     padding: 1rem;
     background-color: colors.$bg-dark;
 
-    .header__title-block {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.25rem;
-
-        .header__logo {
-
-            svg {
-                width: 157px;
-                height: 42px;
-            }
+    &__logo {
+        svg {
+            width: 157px;
+            height: 42px;
         }
     }
 
-    .header__phone-button {
+    &__phone-button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,10 +46,10 @@ import { HeaderBurgerMenu } from '#components';
             height: 1.25rem;
             transition: 0.3s;
         }
-    }
-    .header__phone-button:hover {
-        svg {
-            color: colors.$stroke-dark-100;
+        &:hover {
+            svg {
+                color: colors.$stroke-dark-100;
+            }
         }
     }
 }
