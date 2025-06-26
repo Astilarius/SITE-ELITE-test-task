@@ -6,8 +6,7 @@ import { HeaderBurgerMenu } from '#components';
     <div class="header">
         <HeaderBurgerMenu/>
         <div class="header__title-block">
-            <h1 class="header__title">Scamacca</h1>
-            <img class="header__icon" src="@/assets/icons/bear.svg"/>
+            <nuxt-icon class="header__logo" name="logo"/>
         </div>
         <a href="tel:+74954340326" class="header__phone-button">
             <nuxt-icon name="phone"/>
@@ -33,17 +32,12 @@ import { HeaderBurgerMenu } from '#components';
         align-items: center;
         gap: 0.25rem;
 
-        .header__title {
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 2%;
-            text-transform: uppercase;
-        }
+        .header__logo {
 
-        .header__icon {
-            width: 26px;
-            height: 26px;
-            margin: 0.5rem;
+            svg {
+                width: 157px;
+                height: 42px;
+            }
         }
     }
 
