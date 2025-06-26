@@ -82,7 +82,7 @@ function handleSubmit() {
                         Я принимаю <a class="offer-form__checkbox-link">условия передачи информации</a>
                     </label>
                 </div>
-                <button @click="handleSubmit" class="offer-form__submit-button primary-light">
+                <button @click="handleSubmit" class="offer-form__submit-button primary-black">
                     Оставить заявку <nuxt-icon name="arrow"/>
                 </button>
             </div>
@@ -95,13 +95,13 @@ function handleSubmit() {
 @use "@/assets/scss/variables";
 .offer-form {
     position: relative;
-    top: -40px;
+    top: -45px;
     background-color: colors.$bg-cta;
     border-radius: 1rem;
     color: colors.$text-dark-primary;
     display: flex;
     flex-direction: column;
-    margin: 1.25rem 1.25rem 0 1.25rem;
+    margin: 0.875rem;
     padding: 1.25rem;
     gap: 1.25rem;
     z-index: 5;
@@ -152,6 +152,12 @@ function handleSubmit() {
         width: max-content;
         padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
         border-radius: 0.5rem;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        vertical-align: middle;
         
         svg {
             margin-top: 1.25rem;
@@ -252,13 +258,19 @@ function handleSubmit() {
         text-transform: uppercase;
     }
     &__text-input {
-        padding: 1rem;
+        padding: 0.9rem;
         border-radius: 0.5rem;
         border-width: 1px;
         border-style: solid;
         border-color: colors.$stroke-dark-25;
         background-color: colors.$stroke-light-100;
         color: colors.$text-dark-secondary;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+
         &:hover {
             background-color: colors.$stroke-dark-25;
         }
