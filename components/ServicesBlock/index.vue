@@ -37,7 +37,7 @@ const slides = [
     <div class="services-block">
         <div class="services-block__top-line">
             <h2 class="services-block__title">Предоставляемые услуги</h2>
-            <button class="services-block__all-services-button primary-light">
+            <button class="services-block__all-services-button services-block__all-services-button--md primary-light">
                 Все услуги <nuxt-icon name="arrow"/>
             </button>
         </div>
@@ -65,7 +65,7 @@ const slides = [
                 </div>
             </Slide>
         </Carousel>
-        <button class="services-block__all-services-button primary-light">
+        <button class="services-block__all-services-button services-block__all-services-button--sm primary-light">
             Все услуги <nuxt-icon name="arrow"/>
         </button>
     </div>
@@ -168,7 +168,6 @@ const slides = [
     }
 
     &__all-services-button {
-        display: flex;
         flex-direction: row;
         gap: 1.25rem;
 
@@ -182,10 +181,20 @@ const slides = [
             width: 1rem;
             height: 1rem;
         }
-    }
-    @media screen and (min-width: variables.$md) {
-        &__all-services-button {
+
+        &--sm{
+            display: flex;
+        }
+        &--md{
             display: none;
+        }
+        @media screen and (min-width: variables.$md) {
+            &--sm {
+                display: none;
+            }
+            &--md{
+                display: flex;
+            }
         }
     }
 }

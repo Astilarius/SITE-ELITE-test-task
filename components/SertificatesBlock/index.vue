@@ -32,7 +32,7 @@ const slides = [
     <div class="sertificates-block">
         <div class="sertificates-block__top-line">
             <h2 class="sertificates-block__title">Сертификаты</h2>
-            <button class="sertificates-block__all-sertificates-button primary-light">
+            <button class="sertificates-block__all-sertificates-button sertificates-block__all-sertificates-button--md primary-light">
                 Все сертификаты <nuxt-icon name="arrow"/>
             </button>
         </div>
@@ -49,7 +49,7 @@ const slides = [
                 </div>
             </Slide>
         </Carousel>
-        <button class="sertificates-block__all-sertificates-button primary-light">
+        <button class="sertificates-block__all-sertificates-button sertificates-block__all-sertificates-button--sm primary-light">
             Все сертификаты <nuxt-icon name="arrow"/>
         </button>
     </div>
@@ -70,27 +70,6 @@ const slides = [
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
-        .sertificates-block__all-sertificates-button {
-            display: none;
-
-            width: max-content;
-            padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
-            border-radius: 0.5rem;
-            border: 1px solid colors.$stroke-dark-25;
-            svg {
-                margin-top: 1.25rem;
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-        @media screen and (min-width: variables.$md) {
-            .sertificates-block__all-sertificates-button {
-                display: flex;
-                flex-direction: row;
-                gap: 1.25rem;
-            }
-        }
     }
     
     &__title {
@@ -155,16 +134,25 @@ const slides = [
         padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
         border-radius: 0.5rem;
         border: 1px solid colors.$stroke-dark-25;
-        
+
         svg {
             margin-top: 1.25rem;
             width: 1rem;
             height: 1rem;
         }
-    }
-    @media screen and (min-width: variables.$md) {
-        &__all-sertificates-button {
+        &--sm{
+            display: flex;
+        }
+        &--md{
             display: none;
+        }
+        @media screen and (min-width: variables.$md) {
+            &--sm {
+                display: none;
+            }
+            &--md{
+                display: flex;
+            }
         }
     }
 }
