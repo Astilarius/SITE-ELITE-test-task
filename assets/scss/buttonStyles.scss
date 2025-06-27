@@ -1,11 +1,20 @@
 @use "_colors.scss";
 
+.primary-black,.primary-light,.secondary-light {
+    transition: 0.3s;
+    cursor: pointer;
+    span svg {
+        transition: 0.3s;
+    }
+    &:hover span svg {
+        transform: rotateZ(45deg);
+    }
+}
+
 .primary-black {
     background-color: colors.$accent-primary;
     color: colors.$text-light-primary;
     border-width: 0;
-    transition: 0.3s;
-    cursor: pointer;
     &:hover {
         background-color: colors.$accent-primary-hover;
     }
@@ -15,8 +24,6 @@
     background-color: colors.$accent-secondary;
     color: colors.$text-dark-primary;
     border-width: 0;
-    transition: 0.3s;
-    cursor: pointer;
     &:hover {
         background-color: colors.$accent-primary-hover;
     }
@@ -27,8 +34,6 @@
     color: colors.$text-light-primary;
     border-color: colors.$stroke-light-25;
     border-width: 1px;
-    transition: 0.3s;
-    cursor: pointer;
     &:hover {
         background-color: colors.$accent-secondary;
         color: colors.$text-dark-primary;
