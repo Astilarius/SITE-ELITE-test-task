@@ -101,7 +101,7 @@ function handleSubmit() {
     color: colors.$text-dark-primary;
     display: flex;
     flex-direction: column;
-    margin: 0.875rem;
+    margin: 0.875rem 0.875rem 0 0.875rem;
     padding: 1.25rem;
     gap: 1.25rem;
     z-index: 5;

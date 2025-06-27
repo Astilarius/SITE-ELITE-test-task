@@ -60,7 +60,7 @@ const slides = [
                             <h3 class="services-block__card-title">{{ slide.title }}</h3>
                             <span class="services-block__card-description">{{ slide.description }}</span>
                         </div>
-                        <span class="services-block__card-price">{{ slide.price }}</span>
+                        <span class="services-block__card-price">от {{ slide.price }}</span>
                     </div>
                 </div>
             </Slide>
@@ -80,7 +80,7 @@ const slides = [
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
 
     &__top-line {
         display: flex;
@@ -122,10 +122,10 @@ const slides = [
         display: flex;
         flex-direction: column;
         padding: 1.25rem;
-        margin-right: 1.25rem;
         border-radius: 1rem;
         border: 1px solid colors.$stroke-dark-25;
         gap: 1.25rem;
+        height: fit-content;
 
         &-image-block {
             display: flex;
@@ -149,6 +149,9 @@ const slides = [
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+
+            line-height: 150%;
+            letter-spacing: 0%;
         }
         
         &-title {
@@ -157,8 +160,17 @@ const slides = [
         }
 
         &-description {
-            font-size: 0.8rem;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 0%;
             color: colors.$text-dark-secondary;
+
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            display: -webkit-box;
+
         }
 
         &-price {
@@ -171,7 +183,11 @@ const slides = [
         flex-direction: row;
         gap: 1.25rem;
 
-        width: max-content;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+
         padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
         border-radius: 0.5rem;
         border: 1px solid colors.$stroke-dark-25;
