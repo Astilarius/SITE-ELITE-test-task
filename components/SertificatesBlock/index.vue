@@ -63,7 +63,7 @@ const slides = [
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
     padding-bottom: 2.5rem;
 
     &__top-line {
@@ -84,7 +84,6 @@ const slides = [
         display: flex;
         flex-direction: row;
         padding: 1.25rem;
-        margin-right: 1.25rem;
         justify-content: space-between;
         border: 1px solid colors.$stroke-dark-25;
         border-radius: 1rem;
@@ -99,13 +98,22 @@ const slides = [
 
         &-title {
             font-size: 1rem;
+            font-weight: 600;
+            line-height: 140%;
+            letter-spacing: 0%;
+
+
             color: colors.$text-dark-primary;
         }
 
         &-link {
             font-size: 1rem;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0%;
             color: colors.$accent-primary;
             cursor: pointer;
+
             &:hover {
                 color: colors.$text-dark-secondary;
             }
@@ -115,12 +123,12 @@ const slides = [
                 height: 1rem;
                 padding: 0.125rem;
             }
+        }
 
-            &-icon {
-                svg {
-                    min-width: 1.5rem;
-                    min-height: 1.5rem;
-                }
+        &-icon {
+            svg {
+                min-width: 1.5rem;
+                min-height: 1.5rem;
             }
         }
     }
@@ -134,6 +142,12 @@ const slides = [
         padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
         border-radius: 0.5rem;
         border: 1px solid colors.$stroke-dark-25;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        vertical-align: middle;
 
         svg {
             margin-top: 1.25rem;
