@@ -1,9 +1,42 @@
 <script setup lang="ts">
-import { HeaderBurgerMenu } from '#components';
+    import { ref, onMounted, onBeforeUnmount } from 'vue';
+    import { HeaderBurgerMenu } from '#components';
+
+    const isMounted = ref(false);
+    const prevScrollPos = ref(0);
+    const navbarHeight = ref(0);
+
+    const navbarStyle = ref({
+        top: '0',
+    });
+
+    const handleScroll = () => {
+        if (!isMounted.value) return;
+        const currentScrollPos = window.pageYOffset;
+        if (prevScrollPos.value > currentScrollPos) {
+            navbarStyle.value.top = '0';
+        } else {
+            navbarStyle.value.top = `-${navbarHeight.value}px`;
+        }
+        prevScrollPos.value = currentScrollPos;
+    };
+
+    onMounted(() => {
+        isMounted.value = true;
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            navbarHeight.value = navbar.clientHeight;
+        }
+        window.addEventListener('scroll', handleScroll);
+    });
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('scroll', handleScroll);
+    });
 </script>
 
 <template>
-    <div class="header">
+    <div id="navbar" class="header" :style="navbarStyle">
         <HeaderBurgerMenu/>
         <nuxt-icon class="header__logo" name="logo"/>
         <a href="tel:+74954340326" class="header__phone-button">
@@ -15,6 +48,7 @@ import { HeaderBurgerMenu } from '#components';
 <style lang="scss">
 @use "@/assets/scss/colors";
 .header {
+    transition: 0.3s;
     z-index: 10;
     position: sticky;
     top: 0;
