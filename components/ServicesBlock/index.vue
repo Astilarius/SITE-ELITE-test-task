@@ -182,6 +182,7 @@ const slides = [
     &__all-services-button {
         flex-direction: row;
         gap: 1.25rem;
+        width: max-content;
 
         font-weight: 400;
         font-size: 16px;
