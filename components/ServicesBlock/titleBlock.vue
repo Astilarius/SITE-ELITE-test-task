@@ -3,9 +3,7 @@
 <template>
     <div class="services-block__title-block">
         <h2 class="services-block__title">Предоставляемые услуги</h2>
-        <a class="services-block__all-services-button services-block__all-services-button--md primary-light">
-            Все услуги <nuxt-icon name="arrow"/>
-        </a>
+        <ServicesBlockAllServicesButton :hide-on-size="'md'"/>
     </div>
 </template>
 
