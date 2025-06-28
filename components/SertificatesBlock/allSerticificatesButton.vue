@@ -22,6 +22,7 @@ defineProps({
 <style lang="scss">
 @use "@/assets/scss/colors";
 @use "@/assets/scss/variables";
+@use "@/assets/scss/mixins";
 .sertificates-block__all-sertificates-button {
     display: flex;
     flex-direction: row;
@@ -45,15 +46,13 @@ defineProps({
     }
     &--sm{
         display: flex;
+        @include mixins.min-width('md') {
+            display: none;
+        }
     }
     &--md{
         display: none;
-    }
-    @media screen and (min-width: variables.$md) {
-        &--sm {
-            display: none;
-        }
-        &--md{
+        @include mixins.min-width('md') {
             display: flex;
         }
     }

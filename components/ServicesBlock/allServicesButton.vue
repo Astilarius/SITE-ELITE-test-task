@@ -22,6 +22,7 @@ defineProps({
 <style lang="scss">
 @use "@/assets/scss/colors";
 @use "@/assets/scss/variables";
+@use "@/assets/scss/mixins";
 .services-block__all-services-button {
     flex-direction: row;
     gap: 1.25rem;
@@ -44,15 +45,13 @@ defineProps({
     
     &--sm{
         display: flex;
+        @include mixins.min-width('md') {
+            display: none;
+        }
     }
     &--md{
         display: none;
-    }
-    @media screen and (min-width: variables.$md) {
-        &--sm {
-            display: none;
-        }
-        &--md{
+        @include mixins.min-width('md') {
             display: flex;
         }
     }

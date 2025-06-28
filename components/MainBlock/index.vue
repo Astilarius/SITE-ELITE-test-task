@@ -5,7 +5,7 @@ import 'vue3-carousel/carousel.css'
 const carouselConfig = {
   itemsToShow: 1,
   wrapAround: true,
-  autoplay: 4000
+//   autoplay: 4000
 }
 const slides = [
     {
@@ -58,6 +58,7 @@ const slides = [
 <style lang="scss">
 @use "@/assets/scss/colors";
 @use "@/assets/scss/variables";
+@use "@/assets/scss/mixins";
 .main-block {
     color: colors.$text-light-primary;
 
@@ -67,10 +68,10 @@ const slides = [
         background-image: url("@/assets/images/banner.png");
         background-size: cover;
         background-position: 40%;
+        padding: 3.75rem 2.5rem;
         padding: 1.875rem 1rem;
     }
-
-    @media screen and (min-width: variables.$md) {
+    @include mixins.min-width('md') {
         .carousel__slide {
             justify-content: start;
         }
@@ -85,9 +86,8 @@ const slides = [
             display: flex;
             flex-direction: column;
             gap: 0.875rem;
-        }
-        @media screen and (min-width: variables.$md) {
-            &-text-block {
+
+            @include mixins.min-width('md') {
                 max-width: 452px;
             }
         }
@@ -96,9 +96,8 @@ const slides = [
             display: flex;
             flex-direction: column;
             gap: 0.625rem;
-        }
-        @media screen and (min-width: variables.$md) {
-            &-button-block {
+
+            @include mixins.min-width('md') {
                 flex-direction: row;
                 gap: 0.625rem;
             }
@@ -124,9 +123,8 @@ const slides = [
                 width: 0.875rem;
                 height: 1rem;
             }
-        }
-        @media screen and (min-width: variables.$md) {
-            &-button {
+
+            @include mixins.min-width('md') {
                 font-size: 1rem;
             }
         }
@@ -137,9 +135,8 @@ const slides = [
             font-size: 14px;
             line-height: 150%;
             letter-spacing: 0%;
-        }
-        @media screen and (min-width: variables.$md) {
-            &-description {
+
+            @include mixins.min-width('md') {
                 font-size: 1rem;
             }
         }
@@ -150,9 +147,8 @@ const slides = [
             font-size: 26px;
             line-height: 115%;
             letter-spacing: 0%;
-        }
-        @media screen and (min-width: variables.$md) {
-            &-title {
+
+            @include mixins.min-width('md') {
                 font-size: 2.25rem;
             }
         }
@@ -165,9 +161,8 @@ const slides = [
             margin-bottom: 2.5rem;
             justify-content: space-between;
             gap: 1.25rem;
-        }
-        @media screen and (min-width: variables.$lg) {
-            &-addons-block {
+
+            @include mixins.min-width('md') {
                 margin-top: 8.5rem;
             }
         }

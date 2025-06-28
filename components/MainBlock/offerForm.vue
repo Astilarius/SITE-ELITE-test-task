@@ -93,6 +93,7 @@ function handleSubmit() {
 <style lang="scss">
 @use "@/assets/scss/colors";
 @use "@/assets/scss/variables";
+@use "@/assets/scss/mixins";
 .offer-form {
     position: relative;
     top: -45px;
@@ -106,15 +107,21 @@ function handleSubmit() {
     gap: 1.25rem;
     z-index: 5;
     font-size: 1rem;
+    
+    @include mixins.min-width('lg') {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 360px;
+    }
 
     &__title {
         font-size: 1rem;
         line-height: 140%;
         letter-spacing: 0%;
         font-weight: 600;
-    }
-    @media screen and (min-width: variables.$md) {
-        &__title {
+
+        @include mixins.min-width('md') {
             font-size: 1.125rem;
         }
     }
@@ -129,16 +136,13 @@ function handleSubmit() {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-    }
-    @media screen and (min-width: variables.$md) {
-        &__buttons-block {
+
+        @include mixins.min-width('md') {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
         }
-    }
-    @media screen and (min-width: variables.$lg) {
-        &__buttons-block {
+        @include mixins.min-width('lg') {
             flex-direction: column;
             align-items: start;
         }
@@ -212,14 +216,11 @@ function handleSubmit() {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
-    }
-    @media screen and (min-width: variables.$md) {
-        &__text-inputs-block {
+
+        @include mixins.min-width('md') {
             flex-direction: row;
         }
-    }
-    @media screen and (min-width: variables.$lg) {
-        &__text-inputs-block {
+        @include mixins.min-width('lg') {
             flex-direction: column;
         }
     }
@@ -241,14 +242,11 @@ function handleSubmit() {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
-    }
-    @media screen and (min-width: variables.$md) {
-        &__text-input-block {
+
+        @include mixins.min-width('md') {
             width: 50%;
         }
-    }
-    @media screen and (min-width: variables.$lg) {
-        &__text-input-block {
+        @include mixins.min-width('lg') {
             width: 100%;
         }
     }
@@ -277,14 +275,6 @@ function handleSubmit() {
         &:active {
             border-color: colors.$stroke-dark-50;
         }
-    }
-}
-@media screen and (min-width: variables.$lg) {
-    .offer-form {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 360px;
     }
 }
 </style>
