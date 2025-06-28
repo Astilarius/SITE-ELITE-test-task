@@ -50,19 +50,12 @@ const slides = [
                 </div>
             </template> -->
             <Slide v-for="slide in slides" :key="slide">
-                <div class="services-block__card">
-                    <div class="services-block__card-image-block">
-                        <img class="services-block__card-image" :src="slide.image"/>
-                        <nuxt-icon name="arrow"/>
-                    </div>
-                    <div class="services-block__card-text-block">
-                        <div class="services-block__card-info-block">
-                            <h3 class="services-block__card-title">{{ slide.title }}</h3>
-                            <span class="services-block__card-description">{{ slide.description }}</span>
-                        </div>
-                        <span class="services-block__card-price">от {{ slide.price }}</span>
-                    </div>
-                </div>
+                <ServicesBlockCard
+                    :title="slide.title"
+                    :description="slide.description"
+                    :image="slide.image"
+                    :price="slide.price"
+                />
             </Slide>
         </Carousel>
         <button class="services-block__all-services-button services-block__all-services-button--sm primary-light">
@@ -117,67 +110,6 @@ const slides = [
 
     .carousel__slide {
         padding: 1px;
-    }
-
-    &__card {
-        display: flex;
-        flex-direction: column;
-        padding: 1.25rem;
-        border-radius: 1rem;
-        border: 1px solid colors.$stroke-dark-25;
-        gap: 1.25rem;
-        height: fit-content;
-
-        &-image-block {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        
-        &-image {
-            max-width: 196px;
-            max-height: 126px;
-            border-radius: 1rem;
-        }
-
-        &-text-block {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        &-info-block {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-
-            line-height: 150%;
-            letter-spacing: 0%;
-        }
-        
-        &-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        &-description {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 150%;
-            letter-spacing: 0%;
-            color: colors.$text-dark-secondary;
-
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-            display: -webkit-box;
-
-        }
-
-        &-price {
-            font-size: 1rem;
-            font-weight: 600;
-        }
     }
 
     &__all-services-button {
