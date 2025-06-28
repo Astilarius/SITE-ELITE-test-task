@@ -3,6 +3,7 @@ import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/carousel.css'
 
 const carouselConfig = {
+    gap: 20,
     itemsToShow: 1,
     wrapAround: true,
     breakpoints: {
@@ -30,34 +31,22 @@ const slides = [
 
 <template>
     <div class="sertificates-block">
-        <div class="sertificates-block__top-line">
-            <h2 class="sertificates-block__title">Сертификаты</h2>
-            <button class="sertificates-block__all-sertificates-button sertificates-block__all-sertificates-button--md primary-light">
-                Все сертификаты <nuxt-icon name="arrow"/>
-            </button>
-        </div>
+        <SertificatesBlockTitleBlock/>
         <Carousel
             v-bind="carouselConfig"
         >
             <Slide v-for="slide in slides" :key="slide.id">
-                <div class="sertificates-block__card">
-                    <div class="sertificates-block__card-text-block">               
-                        <span class="sertificates-block__card-title">{{ slide.title }}</span>
-                        <a class="sertificates-block__card-link">Открыть сертификат <nuxt-icon name="arrow"/></a>
-                    </div>
-                    <nuxt-icon class="sertificates-block__card-icon" name="certificate"/>
-                </div>
+                <SertificatesBlockCard
+                    :title="slide.title"
+                />
             </Slide>
         </Carousel>
-        <button class="sertificates-block__all-sertificates-button sertificates-block__all-sertificates-button--sm primary-light">
-            Все сертификаты <nuxt-icon name="arrow"/>
-        </button>
+        <SertificatesBlockAllSerticificatesButton hideOnSize="sm" />
     </div>
 </template>
 
 <style lang="scss">
 @use "@/assets/scss/colors";
-@use "@/assets/scss/variables";
 .sertificates-block {
     color: colors.$text-dark-primary;
     padding: 1rem;
@@ -66,108 +55,8 @@ const slides = [
     gap: 1.5rem;
     padding-bottom: 2.5rem;
 
-    &__top-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    &__title {
-        font-size: 1.25rem;
-    }
-
     .carousel__slide {
         padding: 1px;
-    }
-
-    &__card {
-        display: flex;
-        flex-direction: row;
-        padding: 1.25rem;
-        justify-content: space-between;
-        border: 1px solid colors.$stroke-dark-25;
-        border-radius: 1rem;
-        height: 12.5rem;
-        gap: 2rem;
-
-        &-text-block {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        &-title {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 140%;
-            letter-spacing: 0%;
-
-
-            color: colors.$text-dark-primary;
-        }
-
-        &-link {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 150%;
-            letter-spacing: 0%;
-            color: colors.$accent-primary;
-            cursor: pointer;
-
-            &:hover {
-                color: colors.$text-dark-secondary;
-            }
-
-            svg {
-                width: 1rem;
-                height: 1rem;
-                padding: 0.125rem;
-            }
-        }
-
-        &-icon {
-            svg {
-                min-width: 1.5rem;
-                min-height: 1.5rem;
-            }
-        }
-    }
-
-    &__all-sertificates-button {
-        display: flex;
-        flex-direction: row;
-        gap: 1.25rem;
-
-        width: max-content;
-        padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
-        border-radius: 0.5rem;
-        border: 1px solid colors.$stroke-dark-25;
-
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        letter-spacing: 0%;
-        vertical-align: middle;
-
-        svg {
-            margin-top: 1.25rem;
-            width: 1rem;
-            height: 1rem;
-        }
-        &--sm{
-            display: flex;
-        }
-        &--md{
-            display: none;
-        }
-        @media screen and (min-width: variables.$md) {
-            &--sm {
-                display: none;
-            }
-            &--md{
-                display: flex;
-            }
-        }
     }
 }
 </style>
