@@ -35,12 +35,7 @@ const slides = [
 
 <template>
     <div class="services-block">
-        <div class="services-block__top-line">
-            <h2 class="services-block__title">Предоставляемые услуги</h2>
-            <a class="services-block__all-services-button services-block__all-services-button--md primary-light">
-                Все услуги <nuxt-icon name="arrow"/>
-            </a>
-        </div>
+        <ServicesBlockTitleBlock/>
         <Carousel
             v-bind="carouselConfig"
         >
@@ -69,44 +64,11 @@ const slides = [
 @use "@/assets/scss/variables";
 .services-block {
     color: colors.$text-dark-primary;
-    padding: 1rem;
+    padding: 0.875rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding-bottom: 1.5rem;
-
-    &__top-line {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    &__title {
-        font-weight: 600;
-        font-size: 1.25rem;
-    }
-
-    &__all-services-button {
-        display: none;
-    }
-    @media screen and (min-width: variables.$md) {
-        &__all-services-button {
-            display: flex;
-            flex-direction: row;
-            gap: 1.25rem;
-
-            width: max-content;
-            padding: 0.325rem 0.9375rem 0.625rem 0.9375rem;
-            border-radius: 0.5rem;
-            border: 1px solid colors.$stroke-dark-25;
-            
-            svg {
-                margin-top: 1.25rem;
-                width: 1rem;
-                height: 1rem;
-            }
-        }
-    }
 
     .carousel__slide {
         padding: 1px;
