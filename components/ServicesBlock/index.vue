@@ -37,9 +37,9 @@ const slides = [
     <div class="services-block">
         <div class="services-block__top-line">
             <h2 class="services-block__title">Предоставляемые услуги</h2>
-            <button class="services-block__all-services-button services-block__all-services-button--md primary-light">
+            <a class="services-block__all-services-button services-block__all-services-button--md primary-light">
                 Все услуги <nuxt-icon name="arrow"/>
-            </button>
+            </a>
         </div>
         <Carousel
             v-bind="carouselConfig"
