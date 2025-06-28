@@ -4,6 +4,7 @@ import 'vue3-carousel/carousel.css'
 import cardImage from '../../assets/images/card-image.jpg'
 
 const carouselConfig = {
+    gap: 20,
     itemsToShow: 1,
     wrapAround: true,
     breakpoints: {
@@ -53,7 +54,7 @@ const slides = [
                 />
             </Slide>
         </Carousel>
-        <ServicesBlockAllServicesButton :hide-on-size="'sm'"/>
+        <ServicesBlockAllServicesButton hideOnSize="sm"/>
     </div>
 </template>
 

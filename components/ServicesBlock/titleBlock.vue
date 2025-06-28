@@ -3,7 +3,7 @@
 <template>
     <div class="services-block__title-block">
         <h2 class="services-block__title">Предоставляемые услуги</h2>
-        <ServicesBlockAllServicesButton :hide-on-size="'md'"/>
+        <ServicesBlockAllServicesButton hideOnSize="md"/>
     </div>
 </template>
 
