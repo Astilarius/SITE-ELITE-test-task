@@ -59,7 +59,6 @@ const slides = [
 
 <style lang="scss">
 @use "@/assets/scss/colors";
-@use "@/assets/scss/variables";
 .services-block {
     color: colors.$text-dark-primary;
     padding: 0.875rem;

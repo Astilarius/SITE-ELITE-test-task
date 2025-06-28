@@ -37,7 +37,6 @@ defineProps({
 
 <style lang="scss">
 @use "@/assets/scss/colors";
-@use "@/assets/scss/variables";
 .services-block__card {
     display: flex;
     flex-direction: column;
