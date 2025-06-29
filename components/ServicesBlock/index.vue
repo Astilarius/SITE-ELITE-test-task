@@ -60,6 +60,7 @@ const slides = [
 
 <style lang="scss">
 @use "@/assets/scss/colors";
+@use "@/assets/scss/mixins";
 .services-block {
     color: colors.$text-dark-primary;
     padding: 0.875rem;
@@ -67,6 +68,11 @@ const slides = [
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+
+    @include mixins.min-width('md') {
+        gap: 2.8125rem;
+        padding: 3.125rem 2.5rem 2.5rem 2.5rem;
+    }
 
     .carousel__slide {
         padding: 1px;

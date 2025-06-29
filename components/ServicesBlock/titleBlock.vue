@@ -8,6 +8,7 @@
 </template>
 
 <style lang="scss">
+@use "@/assets/scss/mixins";
 .services-block{
     &__title-block {
         display: flex;
@@ -18,6 +19,12 @@
     &__title {
         font-weight: 600;
         font-size: 1.25rem;
+
+        @include mixins.min-width('md') {
+            font-size: 28px;
+            line-height: 130%;
+            letter-spacing: 0%;
+        }
     }
 }
 </style>

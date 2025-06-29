@@ -39,10 +39,17 @@ defineProps({
     letter-spacing: 0%;
     vertical-align: middle;
 
+    @include mixins.min-width('md') {
+        padding: 5px 15px 10px 15px;
+    }
+
     svg {
         margin-top: 1.25rem;
-        width: 1rem;
-        height: 1rem;
+        width: 13px;
+
+        @include mixins.min-width('md') {
+            margin-top: 1rem;
+        }
     }
     &--sm{
         display: flex;

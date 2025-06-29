@@ -19,6 +19,7 @@ defineProps({
 
 <style lang="scss">
 @use "@/assets/scss/colors";
+@use "@/assets/scss/mixins";
 .sertificates-block__card {
     display: flex;
     flex-direction: row;
@@ -28,11 +29,18 @@ defineProps({
     border-radius: 1rem;
     height: 12.5rem;
     gap: 2rem;
+    
+    @include mixins.min-width('md') {
+        padding: 1.5rem;
+        height: 214px;
+        width: 334px;
+    }
 
     &-text-block {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
+        justify-content: space-between;
     }
 
     &-title {
@@ -42,6 +50,12 @@ defineProps({
         letter-spacing: 0%;
 
         color: colors.$text-dark-primary;
+
+        @include mixins.min-width('md') {
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0%;
+        }
     }
 
     &-link {
@@ -64,9 +78,17 @@ defineProps({
     }
 
     &-icon {
+        @include mixins.min-width('md') {
+            display: flex;
+            flex-direction: column-reverse;
+        }
         svg {
             min-width: 1.5rem;
             min-height: 1.5rem;
+            @include mixins.min-width('md') {
+                min-width: 2rem;
+                min-height: 2rem;
+            }
         }
     }
 }

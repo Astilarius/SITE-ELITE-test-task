@@ -68,8 +68,11 @@ const slides = [
         background-image: url("@/assets/images/banner.png");
         background-size: cover;
         background-position: 40%;
-        padding: 3.75rem 2.5rem;
         padding: 1.875rem 1rem;
+
+        @include mixins.min-width('md') {
+            padding: 3.75rem 2.5rem;
+        }
     }
     @include mixins.min-width('md') {
         .carousel__slide {
@@ -81,6 +84,10 @@ const slides = [
         display: flex;
         flex-direction: column;
         gap: 1.5625rem;
+        
+        @include mixins.min-width('md') {
+            gap: 2.1875rem;
+        }
 
         &-text-block {
             display: flex;
@@ -163,7 +170,7 @@ const slides = [
             gap: 1.25rem;
 
             @include mixins.min-width('md') {
-                margin-top: 8.5rem;
+                margin-top: 4.125rem;
             }
         }
 

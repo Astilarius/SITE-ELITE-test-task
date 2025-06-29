@@ -37,6 +37,7 @@ defineProps({
 
 <style lang="scss">
 @use "@/assets/scss/colors";
+@use "@/assets/scss/mixins";
 .services-block__card {
     display: flex;
     flex-direction: column;
@@ -45,6 +46,9 @@ defineProps({
     border: 1px solid colors.$stroke-dark-25;
     gap: 1.25rem;
     height: fit-content;
+    @include mixins.min-width('md') {
+        padding: 1.5625rem;
+    }
 
     &-image-block {
         display: flex;
@@ -79,6 +83,7 @@ defineProps({
 
         line-height: 140%;
         letter-spacing: -3%;
+
     }
 
     &-description {
@@ -93,11 +98,19 @@ defineProps({
         overflow: hidden;
         display: -webkit-box;
 
+        
+        @include mixins.min-width('md') {
+            font-size: 16px;
+        }
     }
 
     &-price {
         font-size: 1rem;
         font-weight: 600;
+        
+        @include mixins.min-width('md') {
+            font-size: 18px;
+        }
     }
 }
 </style>

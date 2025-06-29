@@ -107,6 +107,14 @@ function handleSubmit() {
     gap: 1.25rem;
     z-index: 5;
     font-size: 1rem;
+
+    @include mixins.min-width('md') {
+        margin: 0.875rem 2.5rem 0 2.5rem;
+        padding: 1.875rem;
+        gap: 1.5625rem;
+        top: -61px;
+    }
+
     
     @include mixins.min-width('lg') {
         position: absolute;
@@ -123,6 +131,8 @@ function handleSubmit() {
 
         @include mixins.min-width('md') {
             font-size: 1.125rem;
+            line-height: 150%;
+            letter-spacing: 0%;
         }
     }
 
@@ -130,6 +140,10 @@ function handleSubmit() {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
+        
+        @include mixins.min-width('md') {
+            gap: 1.5625rem;
+        }
     }
     
     &__buttons-block {

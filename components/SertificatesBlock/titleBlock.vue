@@ -8,8 +8,9 @@
 </template>
 
 <style lang="scss">
+@use "@/assets/scss/mixins";
 .sertificates-block {
-    &__top-line {
+    &__title-block {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -17,6 +18,13 @@
 
     &__title {
         font-size: 1.25rem;
+        
+        @include mixins.min-width('md') {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 130%;
+            letter-spacing: -2%;
+        }
     }
 }
 </style>
