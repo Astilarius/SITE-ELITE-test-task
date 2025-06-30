@@ -72,6 +72,11 @@ const slides = [
     @include mixins.min-width('md') {
         gap: 2.8125rem;
         padding: 3.125rem 2.5rem 2.5rem 2.5rem;
+        padding-top: 68px;
+    }
+    @include mixins.min-width('lg') {
+        gap: 50px;
+        padding: 100px 80px 0 80px;
     }
     @include mixins.min-width('xl') {
         gap: 60px;

@@ -72,9 +72,13 @@ const slides = [
 
         @include mixins.min-width('md') {
             padding: 3.75rem 2.5rem;
+            padding-bottom: 40px;
+        }
+        @include mixins.min-width('lg') {
+            padding: 100px 80px 0 80px;
         }
         @include mixins.min-width('xl') {
-            padding: 120px 100px 229px 100px;
+            padding: 120px 100px 0 100px;
         }
     }
     @include mixins.min-width('md') {
@@ -103,9 +107,12 @@ const slides = [
             @include mixins.min-width('md') {
                 max-width: 452px;
             }
+            @include mixins.min-width('lg') {
+                max-width: 630px;
+                gap: 30px;
+            }
             @include mixins.min-width('xl') {
                 max-width: 850px;
-                gap: 30px;
             }
         }
 
@@ -172,6 +179,10 @@ const slides = [
             @include mixins.min-width('md') {
                 font-size: 1rem;
             }
+            @include mixins.min-width('lg') {
+                max-width: 413px;
+                font-size: 16px;
+            }
             @include mixins.min-width('xl') {
                 max-width: 560px;
                 font-size: 20px;
@@ -187,6 +198,9 @@ const slides = [
 
             @include mixins.min-width('md') {
                 font-size: 2.25rem;
+            }
+            @include mixins.min-width('lg') {
+                font-size: 50px;
             }
             @include mixins.min-width('xl') {
                 font-size: 60px;
@@ -204,6 +218,12 @@ const slides = [
 
             @include mixins.min-width('md') {
                 margin-top: 4.125rem;
+            }
+            @include mixins.min-width('lg') {
+                margin-top: 236px;
+            }
+            @include mixins.min-width('xl') {
+                margin-top: 292px;
             }
         }
 
@@ -231,6 +251,9 @@ const slides = [
                 }
 
                 
+                @include mixins.min-width('lg') {
+                    bottom: -167px;
+                }
                 @include mixins.min-width('xl') {
                     bottom: -229px;
                 }

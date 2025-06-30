@@ -35,7 +35,12 @@ defineProps({
         height: 214px;
         width: 334px;
     }
-    @include mixins.min-width('md') {
+    @include mixins.min-width('lg') {
+        padding: 30px;
+        height: 258px;
+        width: 413px;
+    }
+    @include mixins.min-width('xl') {
         padding: 40px;
         height: 275px;
         width: 560px;
@@ -60,6 +65,9 @@ defineProps({
             font-size: 18px;
             line-height: 150%;
             letter-spacing: 0%;
+        }
+        @include mixins.min-width('lg') {
+            font-size: 20px;
         }
         @include mixins.min-width('xl') {
             font-size: 24px;
@@ -100,6 +108,10 @@ defineProps({
             @include mixins.min-width('md') {
                 min-width: 2rem;
                 min-height: 2rem;
+            }
+            @include mixins.min-width('lg') {
+                min-width: 40px;
+                min-height: 40px;
             }
             @include mixins.min-width('xl') {
                 min-width: 50px;

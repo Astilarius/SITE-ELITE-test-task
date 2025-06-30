@@ -112,20 +112,23 @@ function handleSubmit() {
         margin: 0.875rem 2.5rem 0 2.5rem;
         padding: 1.875rem;
         gap: 1.5625rem;
-        top: -61px;
+        top: -43px;
     }
 
     @include mixins.min-width('lg') {
         position: absolute;
-        top: 70px;
-        right: 0;
-        width: 360px;
+        padding: 30px 25px;
+        top: 150px;
+        right: 42px;
+        width: 310px;
+        gap: 35px;
     }
 
     @include mixins.min-width('xl') {
         top: 187px;
-        right: 58px;
+        right: 70px;
         gap: 30px;
+        width: 345px;
     }
 
 
@@ -139,6 +142,9 @@ function handleSubmit() {
             font-size: 1.125rem;
             line-height: 150%;
             letter-spacing: 0%;
+        }
+        @include mixins.min-width('lg') {
+            font-size: 20px;
         }
         @include mixins.min-width('xl') {
             font-size: 1.5rem;

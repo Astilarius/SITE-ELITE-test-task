@@ -89,6 +89,9 @@
     @include mixins.min-width('md') {
         padding: 1rem 2.5rem;
     }
+    @include mixins.min-width('lg') {
+        padding: 15px 80px;
+    }
     @include mixins.min-width('xl') {
         padding: 1rem 100px;
     }
@@ -119,28 +122,31 @@
 
     &__links-block {
         display: none;
-        @include mixins.min-width('xl') {
-            font-size: 18px;
-            font-weight: 400;
-            margin-left: 35px;
-
-            gap: 40px;
+        @include mixins.min-width('lg') {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 35px;
+
+            gap: 20px;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 18px;
+            margin-left: 35px;
+
+            gap: 40px;
         }
     }
     
     &__link {
-        display: none;
-        @include mixins.min-width('xl') {
-            gap: 5px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
+        gap: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     &__end-block {
@@ -148,7 +154,9 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        @include mixins.min-width('md') {
+            gap: 20px;
+        }
         @include mixins.min-width('xl') {
             gap: 40px;
         }
@@ -156,11 +164,19 @@
 
     &__contact-info {
         display: none;
-        @include mixins.min-width('xl') {
+        @include mixins.min-width('lg') {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            gap: 30px;
+
+            span {
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+        @include mixins.min-width('xl') {
             gap: 40px;
 
             span {
@@ -210,6 +226,11 @@
         svg {
             width: 157px;
             height: 42px;
+
+            @include mixins.min-width('lg') {
+                width: 120px;
+                height: 33px;
+            }
         }
         
         &--sm{

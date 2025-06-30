@@ -25,10 +25,11 @@
             line-height: 130%;
             letter-spacing: 0%;
         }
+        @include mixins.min-width('lg') {
+            font-size: 34px;
+        }
         @include mixins.min-width('xl') {
             font-size: 48px;
-            line-height: 130%;
-            letter-spacing: 0%;
         }
     }
 }
