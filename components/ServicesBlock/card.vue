@@ -49,6 +49,10 @@ defineProps({
     @include mixins.min-width('md') {
         padding: 1.5625rem;
     }
+    @include mixins.min-width('xl') {
+        gap: 1.25rem;
+        padding: 35px;
+    }
 
     &-image-block {
         display: flex;
@@ -60,12 +64,19 @@ defineProps({
         max-width: 196px;
         max-height: 126px;
         border-radius: 1rem;
+        @include mixins.min-width('xl') {
+            max-width: 475px;
+            max-height: 273px;
+        }
     }
 
     &-text-block {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        @include mixins.min-width('xl') {
+            gap:20px;
+        }
     }
     
     &-info-block {
@@ -84,6 +95,9 @@ defineProps({
         line-height: 140%;
         letter-spacing: -3%;
 
+        @include mixins.min-width('xl') {
+            font-size: 2rem;
+        }
     }
 
     &-description {
@@ -98,9 +112,12 @@ defineProps({
         overflow: hidden;
         display: -webkit-box;
 
-        
         @include mixins.min-width('md') {
             font-size: 16px;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 20px;
+            text-wrap: pretty;
         }
     }
 
@@ -110,6 +127,9 @@ defineProps({
         
         @include mixins.min-width('md') {
             font-size: 18px;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 24px;
         }
     }
 }

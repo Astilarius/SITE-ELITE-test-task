@@ -32,6 +32,7 @@ const showMobileMenu = ref<boolean>(false)
 
 <style lang="scss">
 @use "@/assets/scss/colors";
+@use "@/assets/scss/mixins";
 .header__mobile-menu {
     z-index: 10;
     position: fixed;
@@ -61,6 +62,10 @@ const showMobileMenu = ref<boolean>(false)
         height: 2.75rem;
         border-radius: 0.75rem;
         border: 0;
+
+        @include mixins.min-width('lg') {
+            display: none;
+        }
 
         img {
             width: 1.25rem;

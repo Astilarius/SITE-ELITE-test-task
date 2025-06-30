@@ -43,7 +43,18 @@
             <div class="header__partner-text">Официальный дилер Scamacca в Москве</div>
         </div>
         <nuxt-icon class="header__logo header__logo--sm" name="logo"/>
+        <div class="header__links-block">
+            <div class="header__link">Модельный ряд <nuxt-icon name="minimalist-arrow"/></div>
+            <div class="header__link">Покупка <nuxt-icon name="minimalist-arrow"/></div>
+            <div class="header__link">Сервис <nuxt-icon name="minimalist-arrow"/></div>
+            <div class="header__link">О нас <nuxt-icon name="minimalist-arrow"/></div>
+            <div class="header__link">Еще <nuxt-icon name="minimalist-arrow"/></div>
+        </div>
         <div class="header__end-block">
+            <div class="header__contact-info">
+                <span>г. Москва, ул. Космонавтиков, д. 6</span>
+                <span>+7 (495) 434-03-26</span>
+            </div>
             <div class="header__stats-block">
                 <div class="stat-container">
                     <nuxt-icon name="heart"/>
@@ -78,6 +89,9 @@
     @include mixins.min-width('md') {
         padding: 1rem 2.5rem;
     }
+    @include mixins.min-width('xl') {
+        padding: 1rem 100px;
+    }
 
     &__logo-block {
         display: flex;
@@ -97,6 +111,36 @@
             width: 114px;
             color: colors.$text-light-secondary;
         }
+        @include mixins.min-width('xl') {
+            font-size: 16px;
+            width: 160px;
+        }
+    }
+
+    &__links-block {
+        display: none;
+        @include mixins.min-width('xl') {
+            font-size: 18px;
+            font-weight: 400;
+            margin-left: 35px;
+
+            gap: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    &__link {
+        display: none;
+        @include mixins.min-width('xl') {
+            gap: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     &__end-block {
@@ -105,6 +149,24 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+        @include mixins.min-width('xl') {
+            gap: 40px;
+        }
+    }
+
+    &__contact-info {
+        display: none;
+        @include mixins.min-width('xl') {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+
+            span {
+                font-size: 18px;
+            }
+        }
     }
 
     &__stats-block {
@@ -134,6 +196,12 @@
                 color: colors.$text-dark-primary;
                 background-color: colors.$stat-block;
                 border-radius: 0.25rem;
+            }
+        }
+        @include mixins.min-width('xl') {
+            span svg {
+                width: 18px;
+                height: 18px;
             }
         }
     }
@@ -167,6 +235,11 @@
         height: 2.75rem;
         border-radius: 0.75rem;
         border: 0;
+        
+        @include mixins.min-width('lg') {
+            display: none;
+        }
+
         svg {
             color: colors.$stroke-light-100;
             width: 1.25rem;

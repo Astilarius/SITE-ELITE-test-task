@@ -64,5 +64,9 @@ const slides = [
     .carousel__slide {
         padding: 1px;
     }
+    @include mixins.min-width('xl') {
+        gap: 60px;
+        padding: 120px 100px;
+    }
 }
 </style>

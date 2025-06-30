@@ -73,6 +73,9 @@ const slides = [
         @include mixins.min-width('md') {
             padding: 3.75rem 2.5rem;
         }
+        @include mixins.min-width('xl') {
+            padding: 120px 100px 229px 100px;
+        }
     }
     @include mixins.min-width('md') {
         .carousel__slide {
@@ -88,6 +91,9 @@ const slides = [
         @include mixins.min-width('md') {
             gap: 2.1875rem;
         }
+        @include mixins.min-width('xl') {
+            gap: 45px;
+        }
 
         &-text-block {
             display: flex;
@@ -96,6 +102,10 @@ const slides = [
 
             @include mixins.min-width('md') {
                 max-width: 452px;
+            }
+            @include mixins.min-width('xl') {
+                max-width: 850px;
+                gap: 30px;
             }
         }
 
@@ -129,10 +139,26 @@ const slides = [
                 margin-top: 1rem;
                 width: 0.875rem;
                 height: 1rem;
+                @include mixins.min-width('xl') {
+                    width: 1rem;
+                    height: 1rem;
+                }
             }
 
             @include mixins.min-width('md') {
                 font-size: 1rem;
+            }
+            
+            @include mixins.min-width('xl') {
+                font-size: 18px;
+                gap: 30px;
+                width: 169;
+                height: 60px;
+
+                padding-top: 8px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+                padding-left: 15px;
             }
         }
         
@@ -146,6 +172,10 @@ const slides = [
             @include mixins.min-width('md') {
                 font-size: 1rem;
             }
+            @include mixins.min-width('xl') {
+                max-width: 560px;
+                font-size: 20px;
+            }
         }
         
         &-title {
@@ -157,6 +187,9 @@ const slides = [
 
             @include mixins.min-width('md') {
                 font-size: 2.25rem;
+            }
+            @include mixins.min-width('xl') {
+                font-size: 60px;
             }
         }
         
@@ -195,6 +228,11 @@ const slides = [
                     &--active {
                         background-color: colors.$stroke-light-100;
                     }
+                }
+
+                
+                @include mixins.min-width('xl') {
+                    bottom: -229px;
                 }
             }
         }

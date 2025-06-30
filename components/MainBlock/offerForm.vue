@@ -115,13 +115,19 @@ function handleSubmit() {
         top: -61px;
     }
 
-    
     @include mixins.min-width('lg') {
         position: absolute;
         top: 70px;
         right: 0;
         width: 360px;
     }
+
+    @include mixins.min-width('xl') {
+        top: 187px;
+        right: 58px;
+        gap: 30px;
+    }
+
 
     &__title {
         font-size: 1rem;
@@ -133,6 +139,9 @@ function handleSubmit() {
             font-size: 1.125rem;
             line-height: 150%;
             letter-spacing: 0%;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 1.5rem;
         }
     }
 
@@ -160,6 +169,9 @@ function handleSubmit() {
             flex-direction: column;
             align-items: start;
         }
+        @include mixins.min-width('xl') {
+            gap: 30px;
+        }
     }
 
     &__submit-button {
@@ -182,6 +194,17 @@ function handleSubmit() {
             width: 1rem;
             height: 1rem;
         }
+        
+        @include mixins.min-width('xl') {
+            font-size: 18px;
+            gap: 30px;
+            height: 60px;
+
+            padding-top: 8px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
     }
     
     &__checkbox-container {
@@ -198,6 +221,11 @@ function handleSubmit() {
         appearance: none;
         min-width: 1.1rem;
         min-height: 1.1rem;
+
+        @include mixins.min-width('xl') {
+            min-width: 24px;
+            min-height: 24px;
+        }
 
         &-error {
             border: 1px solid colors.$error;
@@ -216,6 +244,10 @@ function handleSubmit() {
     &__checkbox-label {
         font-size: 14px;
         line-height: 150%;
+        
+        @include mixins.min-width('xl') {
+            font-size: 18px;
+        }
     }
     
     &__checkbox-link {
@@ -223,6 +255,9 @@ function handleSubmit() {
         cursor: pointer;
         &:hover {
             color: colors.$text-dark-secondary;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 16px;
         }
     }
     
@@ -288,6 +323,10 @@ function handleSubmit() {
         }
         &:active {
             border-color: colors.$stroke-dark-50;
+        }
+        @include mixins.min-width('xl') {
+            font-size: 1rem;
+            padding: 1.25rem;
         }
     }
 }
