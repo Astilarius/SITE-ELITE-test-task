@@ -249,14 +249,6 @@ const slides = [
                         background-color: colors.$stroke-light-100;
                     }
                 }
-
-                
-                @include mixins.min-width('lg') {
-                    bottom: -167px;
-                }
-                @include mixins.min-width('xl') {
-                    bottom: -229px;
-                }
             }
         }
     }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Carousel, Slide } from 'vue3-carousel'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/carousel.css'
 import cardImage from '../../assets/images/card-image.jpg'
 
@@ -41,8 +41,8 @@ const slides = [
             v-bind="carouselConfig"
         >
             <!-- <template #addons>
-                <div class="">
-                    <div class=""><Navigation /></div>
+                <div class="services-block__slide-navigation-block">
+                    <Navigation />
                 </div>
             </template> -->
             <Slide v-for="slide in slides" :key="slide">
@@ -85,6 +85,28 @@ const slides = [
 
     .carousel__slide {
         padding: 1px;
+    }
+
+    &__slide-navigation-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 90px;
+        height: 50px;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0.5rem;
+        border-color: colors.$stroke-light-25;
+        align-self: flex-end;
+
+        .carousel__prev, .carousel__next {
+            position: relative;
+            transform: none;
+            color: colors.$text-dark-primary;
+            inset-block-start: 0;
+            padding: 2px;
+        }
     }
 }
 </style>

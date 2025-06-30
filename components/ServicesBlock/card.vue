@@ -133,6 +133,9 @@ defineProps({
             font-size: 18px;
         }
         @include mixins.min-width('lg') {
+            font-size: 20px;
+        }
+        @include mixins.min-width('xl') {
             font-size: 24px;
         }
     }
