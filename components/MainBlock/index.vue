@@ -5,7 +5,7 @@ import 'vue3-carousel/carousel.css'
 const carouselConfig = {
   itemsToShow: 1,
   wrapAround: true,
-//   autoplay: 4000
+  autoplay: 4000
 }
 const slides = [
     {
