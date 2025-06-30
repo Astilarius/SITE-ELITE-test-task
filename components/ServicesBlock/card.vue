@@ -46,13 +46,17 @@ defineProps({
     border: 1px solid colors.$stroke-dark-25;
     gap: 1.25rem;
     height: fit-content;
+    max-width: 290px;
     @include mixins.min-width('md') {
+        max-width: 334px;
         padding: 1.5625rem;
     }
     @include mixins.min-width('lg') {
+        max-width: 413.33px;
         padding: 35px;
     }
     @include mixins.min-width('xl') {
+        max-width: 560px;
         gap: 1.25rem;
     }
 

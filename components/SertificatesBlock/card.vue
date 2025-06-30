@@ -29,8 +29,10 @@ defineProps({
     border-radius: 1rem;
     height: 12.5rem;
     gap: 2rem;
+    max-width: 290px;
     
     @include mixins.min-width('md') {
+        max-width: unset;
         padding: 1.5rem;
         height: 214px;
         width: 334px;
